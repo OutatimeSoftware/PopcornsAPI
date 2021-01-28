@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.popcorn</groupId>
 	<artifactId>PopcornsAPI</artifactId>
-	<version>1.0.1-SETUP</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>PopcornsAPI</name>
 	<description>Basic CRUD REST API for a Movies Fan</description>
 	<properties>
