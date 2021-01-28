@@ -56,7 +56,7 @@ public class MovieController {
     public Movie getMovie(
             @PathVariable(value="id") int thisID
     ) {
-        // Fetch movie from DB with 'thisID'
+        // Fetch the movie with the thisID
         Movie thisMovie = new Movie(
                 2,
                 "Parasite",
@@ -78,6 +78,78 @@ public class MovieController {
         );
 
         // Return movie
+        return thisMovie;
+    }
+
+    @PutMapping("/movies/{id}")
+    public Movie updateMovie(
+            @PathVariable(value="id") int thisID,
+            @RequestBody Movie newMovie
+    ) {
+        // Fetch the movie with the thisID
+        Movie thisMovie = new Movie(
+                3,
+                "X-Men",
+                new User(
+                        "robcllanes",
+                        "Roberto",
+                        "Llanes",
+                        "https://ui-avatars.com/api/?name=John+Doe",
+                        "roberto@cllanes.com"
+                ),
+                new Date(
+                        5,
+                        12,
+                        2019
+                ),
+                new Date(
+                        25,
+                        11,
+                        2021
+                )
+        );
+
+        // Update the movie Object
+        thisMovie.setTitle(newMovie.getTitle());
+        thisMovie.setAddedBy(newMovie.getAddedBy());
+        thisMovie.setCreatedAt(newMovie.getCreatedAt());
+        thisMovie.setUpdatedAt(newMovie.getUpdatedAt());
+
+        // Return updated Object
+        return thisMovie;
+
+    }
+
+    @DeleteMapping("/movies/{id}")
+    public Movie deleteMovie(
+            @PathVariable(value="id") int thisID
+    ) {
+        // Fetch movie with thisID
+        Movie thisMovie = new Movie(
+                4,
+                "Harry Potter",
+                new User(
+                        "doej",
+                        "John",
+                        "Doe",
+                        "https://ui-avatars.com/api/?name=John+Doe",
+                        "john@doe.com"
+                ),
+                new Date(
+                        6,
+                        4,
+                        2020
+                ),
+                new Date(
+                        8,
+                        11,
+                        2021
+                )
+        );
+
+        // Delete movie with thisID
+
+        // Return deleted movie
         return thisMovie;
     }
 }
