@@ -1,10 +1,7 @@
 package com.popcorn.PopcornsAPI.Controllers;
 
 import com.popcorn.PopcornsAPI.Entities.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -33,10 +30,80 @@ public class UserController {
     public User postUser(
             @RequestBody User newUser
     ) {
+        // Create the Object
+        User thisUser = new User(
+                newUser.getUsername(),
+                newUser.getName(),
+                newUser.getLastname(),
+                newUser.getProfilePicture(),
+                newUser.getEmail()
+        );
+
         // Save Object to the DB
 
         // Return the created Object
-        return newUser;
+        return thisUser;
+    }
+
+    @GetMapping("/users/{id}")
+    public User getUser(
+            @PathVariable(value="id") int thisID
+    ) {
+        // Fetch user with thisID
+        User thisUser = new User(
+                "zezima",
+                "Luis",
+                "Castrejón",
+                "https://ui-avatars.com/api/?name=John+Doe",
+                "zezima@gmail.com"
+        );
+
+        // Return fetched Object
+        return thisUser;
+    }
+
+    @PutMapping("/users/{id}")
+    public User updateUser(
+            @PathVariable(value="id") int thisID,
+            @RequestBody User newUser
+    ) {
+        // Fetch user with thisID
+        User thisUser = new User(
+                "Artix",
+                "Rodrigo",
+                "Pantoja",
+                "https://ui-avatars.com/api/?name=John+Doe",
+                "pantoja@gmail.com"
+        );
+
+        // Update user with the new data
+        thisUser.setUsername(newUser.getUsername());
+        thisUser.setName(newUser.getName());
+        thisUser.setLastname(newUser.getLastname());
+        thisUser.setProfilePicture(newUser.getProfilePicture());
+        thisUser.setEmail(newUser.getEmail());
+
+        // Return updated user
+        return thisUser;
+    }
+
+    @DeleteMapping("/users/{id}")
+    public User deleteUser(
+            @PathVariable(value="id") int thisID
+    ) {
+        // Fetch the Object with thisID
+        User thisUser = new User(
+                "CharliePs",
+                "Charles",
+                "Darwin",
+                "https://ui-avatars.com/api/?name=John+Doe",
+                "charles@gmail.com"
+        );
+
+        // Delete the Object with thisID
+
+        // Return deleted Object
+        return thisUser;
     }
 
 }

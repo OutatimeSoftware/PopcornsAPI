@@ -33,10 +33,10 @@ public class RatingController {
     ){
         // Create the rating Object
         Rating thisRating = new Rating(
-                3,
-                "X-Men",
-                4,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum tempor turpis accumsan pretium. Donec id commodo metus, sit amet aliquam arcu. Cras placerat feugiat feugiat. Etiam euismod diam non purus pretium, ut lobortis massa pulvinar. Morbi aliquet vel elit vitae ullamcorper. Mauris quis orci a sem sollicitudin suscipit. Curabitur non magna hendrerit odio convallis dignissim id a metus. Curabitur felis purus, volutpat eu felis quis, malesuada interdum nunc."
+                newRating.getID(),
+                newRating.getMovieTitle(),
+                newRating.getRating(),
+                newRating.getReview()
         );
 
         // Save the Object to the DB

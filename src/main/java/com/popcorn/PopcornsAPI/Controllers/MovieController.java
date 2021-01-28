@@ -46,10 +46,19 @@ public class MovieController {
     public Movie postMovie(
             @RequestBody Movie newMovie
     ) {
+        // Create the Object
+        Movie thisMovie = new Movie(
+                newMovie.getID(),
+                newMovie.getTitle(),
+                newMovie.getAddedBy(),
+                newMovie.getCreatedAt(),
+                newMovie.getUpdatedAt()
+        );
+
         // Save the Object to the DB
 
         // Return the created Object
-        return newMovie;
+        return thisMovie;
     }
 
     @GetMapping("/movies/{id}")
