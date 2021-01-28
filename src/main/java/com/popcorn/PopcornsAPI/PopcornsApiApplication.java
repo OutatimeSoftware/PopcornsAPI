@@ -6,8 +6,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PopcornsApiApplication {
 
+	private final String message = "Hello World!";
+
+	public PopcornsApiApplication() {}
+
 	public static void main(String[] args) {
-		SpringApplication.run(PopcornsApiApplication.class, args);
+		System.out.println(new PopcornsApiApplication().getMessage());
+	}
+
+	private final String getMessage() {
+		return message;
 	}
 
 }
