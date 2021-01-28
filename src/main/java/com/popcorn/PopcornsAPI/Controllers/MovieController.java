@@ -3,10 +3,7 @@ package com.popcorn.PopcornsAPI.Controllers;
 import com.popcorn.PopcornsAPI.Entities.Movie;
 import com.popcorn.PopcornsAPI.Entities.User;
 import com.popcorn.PopcornsAPI.generic.Date;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -53,5 +50,34 @@ public class MovieController {
 
         // Return the created Object
         return newMovie;
+    }
+
+    @GetMapping("/movies/{id}")
+    public Movie getMovie(
+            @PathVariable(value="id") int thisID
+    ) {
+        // Fetch movie from DB with 'thisID'
+        Movie thisMovie = new Movie(
+                2,
+                "Parasite",
+                new User(
+                        "MigueRA",
+                        "Miguel",
+                        "Ávila",
+                        "https://avatars.githubusercontent.com/u/35583825?s=460&u=74d04bff33c79dc8d3032df0337020cccfbfd218&v=4",
+                        "miguel@avila.cool"
+                ),
+                new Date(
+                        23,
+                        1,
+                        2021
+                ),
+                new Date(23,
+                        1,
+                        2021)
+        );
+
+        // Return movie
+        return thisMovie;
     }
 }
