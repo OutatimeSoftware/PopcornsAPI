@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @RestController
 public class UserController {
 
-    @GetMapping("/users")
+    @GetMapping("/api/users")
     public ArrayList<User> getAll() {
         // Create the users list
         ArrayList<User> list = new ArrayList<User>();
@@ -26,7 +26,7 @@ public class UserController {
         return list;
     }
 
-    @PostMapping("/users")
+    @PostMapping("/api/users")
     public User postUser(
             @RequestBody User newUser
     ) {
@@ -45,7 +45,7 @@ public class UserController {
         return thisUser;
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/api/users/{id}")
     public User getUser(
             @PathVariable(value="id") int thisID
     ) {
@@ -62,7 +62,7 @@ public class UserController {
         return thisUser;
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/api/users/{id}")
     public User updateUser(
             @PathVariable(value="id") int thisID,
             @RequestBody User newUser
@@ -87,7 +87,7 @@ public class UserController {
         return thisUser;
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/api/users/{id}")
     public User deleteUser(
             @PathVariable(value="id") int thisID
     ) {

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @RestController
 public class MovieController {
 
-    @GetMapping("/movies")
+    @GetMapping("/api/movies")
     public ArrayList<Movie> getAll() {
         // Create Movie list
         ArrayList<Movie> list = new ArrayList<Movie>();
@@ -42,7 +42,7 @@ public class MovieController {
         return list;
     }
 
-    @PostMapping("/movies")
+    @PostMapping("/api/movies")
     public Movie postMovie(
             @RequestBody Movie newMovie
     ) {
@@ -61,7 +61,7 @@ public class MovieController {
         return thisMovie;
     }
 
-    @GetMapping("/movies/{id}")
+    @GetMapping("/api/movies/{id}")
     public Movie getMovie(
             @PathVariable(value="id") int thisID
     ) {
@@ -90,7 +90,7 @@ public class MovieController {
         return thisMovie;
     }
 
-    @PutMapping("/movies/{id}")
+    @PutMapping("/api/movies/{id}")
     public Movie updateMovie(
             @PathVariable(value="id") int thisID,
             @RequestBody Movie newMovie
@@ -129,7 +129,7 @@ public class MovieController {
 
     }
 
-    @DeleteMapping("/movies/{id}")
+    @DeleteMapping("/api/movies/{id}")
     public Movie deleteMovie(
             @PathVariable(value="id") int thisID
     ) {

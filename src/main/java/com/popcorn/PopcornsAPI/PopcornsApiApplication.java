@@ -25,5 +25,20 @@ public class PopcornsApiApplication {
 		return "index";
 	}
 
+	@GetMapping("/movies")
+	public String movies() {
+		return "movies";
+	}
+
+	@GetMapping("/ratings")
+	public String ratings() {
+		return "ratings";
+	}
+
+	@GetMapping("/users")
+	public String users() {
+		return "users";
+	}
+
 
 }
