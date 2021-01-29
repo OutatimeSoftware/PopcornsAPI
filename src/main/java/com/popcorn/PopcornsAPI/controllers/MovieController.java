@@ -1,5 +1,6 @@
 package com.popcorn.PopcornsAPI.controllers;
 
+import com.popcorn.PopcornsAPI.database.MovieDAO;
 import com.popcorn.PopcornsAPI.entities.Movie;
 import com.popcorn.PopcornsAPI.entities.User;
 import com.popcorn.PopcornsAPI.generic.Date;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 
 @RestController
 public class MovieController {
+
+    private MovieDAO movieDAO;
 
     @GetMapping("/api/movies")
     public ArrayList<Movie> getAll() {
