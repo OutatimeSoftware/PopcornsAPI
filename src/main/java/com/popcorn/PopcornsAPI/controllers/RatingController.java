@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @RestController
 public class RatingController {
 
-    @GetMapping("/ratings")
+    @GetMapping("/api/ratings")
     public ArrayList<Rating> getAll() {
 
         // Create rating list
@@ -27,7 +27,7 @@ public class RatingController {
 
     }
 
-    @PostMapping("/ratings")
+    @PostMapping("/api/ratings")
     public Rating postRating(
             @RequestBody Rating newRating
     ){
@@ -46,7 +46,7 @@ public class RatingController {
         return thisRating;
     }
 
-    @GetMapping("/ratings/{id}")
+    @GetMapping("/api/ratings/{id}")
     public Rating getRating(
             @PathVariable(value="id") int thisID
     ) {
@@ -62,7 +62,7 @@ public class RatingController {
         return thisRating;
     }
 
-    @PutMapping("/ratings/{id}")
+    @PutMapping("/api/ratings/{id}")
     public Rating updateRating(
             @PathVariable(value="id") int thisID,
             @RequestBody Rating newRating
@@ -84,7 +84,7 @@ public class RatingController {
         return thisRating;
     }
 
-    @DeleteMapping("/ratings/{id}")
+    @DeleteMapping("/api/ratings/{id}")
     public Rating deleteRating(
             @PathVariable(value="id") int thisID
     ) {
