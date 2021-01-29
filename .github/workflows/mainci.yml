@@ -27,4 +27,4 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"G01CZ5TE278\",\"text\":\"Hey team! from the main branch\"}'
+          args: '{\"channel\":\"G01CZ5TE278\",\"text\":\"Build Success in main branch!\"}'
