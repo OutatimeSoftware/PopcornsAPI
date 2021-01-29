@@ -1,6 +1,6 @@
-package com.popcorn.PopcornsAPI.Controllers;
+package com.popcorn.PopcornsAPI.controllers;
 
-import com.popcorn.PopcornsAPI.Entities.User;
+import com.popcorn.PopcornsAPI.entities.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

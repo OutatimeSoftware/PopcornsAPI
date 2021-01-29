@@ -1,4 +1,4 @@
-package com.popcorn.PopcornsAPI.Entities;
+package com.popcorn.PopcornsAPI.entities;
 
 public class Rating {
 

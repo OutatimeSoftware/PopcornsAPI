@@ -1,6 +1,6 @@
-package com.popcorn.PopcornsAPI.Controllers;
+package com.popcorn.PopcornsAPI.controllers;
 
-import com.popcorn.PopcornsAPI.Entities.Rating;
+import com.popcorn.PopcornsAPI.entities.Rating;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

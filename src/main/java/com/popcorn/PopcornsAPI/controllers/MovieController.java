@@ -1,7 +1,7 @@
-package com.popcorn.PopcornsAPI.Controllers;
+package com.popcorn.PopcornsAPI.controllers;
 
-import com.popcorn.PopcornsAPI.Entities.Movie;
-import com.popcorn.PopcornsAPI.Entities.User;
+import com.popcorn.PopcornsAPI.entities.Movie;
+import com.popcorn.PopcornsAPI.entities.User;
 import com.popcorn.PopcornsAPI.generic.Date;
 import org.springframework.web.bind.annotation.*;
 

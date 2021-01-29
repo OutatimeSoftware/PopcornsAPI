@@ -1,4 +1,4 @@
-package com.popcorn.PopcornsAPI.Entities;
+package com.popcorn.PopcornsAPI.entities;
 
 import com.popcorn.PopcornsAPI.generic.Date;
 
