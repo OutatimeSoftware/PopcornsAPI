@@ -18,3 +18,14 @@ jobs:
           java-version: 11
       - name: Build with Maven
         run: mvn -B -X package --file pom.xml
+  slack:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send notify
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: pullreminders/slack-action@master
+        with:
+          args: '{\"channel\":\"C1234567890\",\"text\":\"Hello world\"}'
+    
