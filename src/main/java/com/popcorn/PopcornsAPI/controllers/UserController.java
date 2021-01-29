@@ -1,6 +1,5 @@
 package com.popcorn.PopcornsAPI.controllers;
 
-import com.popcorn.PopcornsAPI.database.UserDAO;
 import com.popcorn.PopcornsAPI.entities.User;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,8 +7,6 @@ import java.util.ArrayList;
 
 @RestController
 public class UserController {
-
-    private UserDAO userDAO;
 
     @GetMapping("/api/users")
     public ArrayList<User> getAll() {
