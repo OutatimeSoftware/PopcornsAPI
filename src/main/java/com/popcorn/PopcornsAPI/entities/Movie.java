@@ -1,13 +1,49 @@
 package com.popcorn.PopcornsAPI.entities;
 
-import com.popcorn.PopcornsAPI.generic.Date;
+
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity(name = "movies")
+@Table(name = "movies")
 
 public class Movie {
-
-    private final Integer ID;
+    @Id
+    @SequenceGenerator(
+            name = "movie_sequence",
+            sequenceName = "movie_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "movie_sequence"
+    )
+    @Column(
+            name = "id",
+            updatable = false
+    )
+    private Integer ID;
+    @Column(
+            name = "title",
+            columnDefinition = "TEXT",
+            nullable = false
+    )
     private String title;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="userId", nullable=false)
     private User addedBy;
+    @Temporal(TemporalType.DATE)
+    @Column(
+            name = "createdAt",
+            nullable = false
+    )
     private Date createdAt;
+    @Temporal(TemporalType.DATE)
+    @Column(
+            name = "updatedAt",
+            nullable = false
+    )
     private Date UpdatedAt;
 
     public Movie(Integer ID, String title, User addedBy, Date createdAt, Date updatedAt) {
