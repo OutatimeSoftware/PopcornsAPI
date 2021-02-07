@@ -2,10 +2,10 @@ package com.popcorn.PopcornsAPI.controllers;
 
 import com.popcorn.PopcornsAPI.entities.Movie;
 import com.popcorn.PopcornsAPI.entities.User;
-import com.popcorn.PopcornsAPI.generic.Date;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @RestController
 public class MovieController {
@@ -27,14 +27,14 @@ public class MovieController {
                         "jorge@reyes.im"
                 ),
                 new Date(
-                        12,
+                        2020,
                         5,
-                        2020
+                        10
                 ),
                 new Date(
-                        15,
+                        2020,
                         5,
-                        2020
+                        20
                 )
         ));
 
@@ -77,13 +77,13 @@ public class MovieController {
                         "miguel@avila.cool"
                 ),
                 new Date(
-                        23,
+                        2023,
                         1,
-                        2021
+                        21
                 ),
-                new Date(23,
+                new Date(2203,
                         1,
-                        2021)
+                        20)
         );
 
         // Return movie
@@ -100,27 +100,27 @@ public class MovieController {
                 3,
                 "X-Men",
                 new User(
-                        "robcllanes",
+                        "Apoquinto",
                         "Roberto",
                         "Llanes",
                         "https://ui-avatars.com/api/?name=John+Doe",
                         "roberto@cllanes.com"
                 ),
                 new Date(
-                        5,
+                        219,
                         12,
-                        2019
+                        20
                 ),
                 new Date(
-                        25,
+                        21,
                         11,
-                        2021
+                        20
                 )
         );
 
         // Update the movie Object
         thisMovie.setTitle(newMovie.getTitle());
-        thisMovie.setAddedBy(newMovie.getAddedBy());
+        //thisMovie.setAddedBy(newMovie.getAddedBy());
         thisMovie.setCreatedAt(newMovie.getCreatedAt());
         thisMovie.setUpdatedAt(newMovie.getUpdatedAt());
 
@@ -135,7 +135,7 @@ public class MovieController {
     ) {
         // Fetch movie with thisID
         Movie thisMovie = new Movie(
-                4,
+                5,
                 "Harry Potter",
                 new User(
                         "doej",
