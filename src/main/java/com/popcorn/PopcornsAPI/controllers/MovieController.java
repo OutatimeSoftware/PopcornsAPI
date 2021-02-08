@@ -1,5 +1,6 @@
 package com.popcorn.PopcornsAPI.controllers;
 
+import com.popcorn.PopcornsAPI.Service.MovieService;
 import com.popcorn.PopcornsAPI.entities.Movie;
 import com.popcorn.PopcornsAPI.entities.User;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,8 @@ import java.util.Date;
 
 @RestController
 public class MovieController {
+
+    MovieService movieService = new MovieService();
 
     @GetMapping("/api/movies")
     public ArrayList<Movie> getAll() {
