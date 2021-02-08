@@ -120,7 +120,7 @@ public class MovieController {
 
         // Update the movie Object
         thisMovie.setTitle(newMovie.getTitle());
-        //thisMovie.setAddedBy(newMovie.getAddedBy());
+        thisMovie.setAddedBy(newMovie.getAddedBy());
         thisMovie.setCreatedAt(newMovie.getCreatedAt());
         thisMovie.setUpdatedAt(newMovie.getUpdatedAt());
 
