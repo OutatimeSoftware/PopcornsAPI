@@ -1,7 +1,13 @@
 package com.popcorn.PopcornsAPI.entities;
 
+//import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Id;
+
+//@Document(collation = "ratings")
 public class Rating {
 
+    //@Id
     private final Integer ID;
     private String movieTitle;
     private Integer rating;
