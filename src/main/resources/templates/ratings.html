@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar mb-4">
     <div class="navbar-brand">
         <a href="/" class="navbar-item has-text-weight-semibold has-text-grey-darker">
             <img src="../favicon.png" alt="logo" class="mr-2">
@@ -35,13 +35,69 @@
         </div>
         <div class="navbar-end">
             <div class="navbar-item">
-                <a href="#" class="button is-info is-light">
+                <a href="https://github.com/OutatimeSoftware/PopcornsAPI" class="button is-info is-light">
                     Documentation
                 </a>
             </div>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="content">
+        <h3>How to use the ratings endpoint:</h3>
+        This is a brief explanation of how to use the ratings endpoint <span class="tag">/api/ratings</span>.
+        <div class="mb-6"></div>
+
+        <h5>Get all the ratings</h5>
+        <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/ratings</span> will return the complete ratings list.</p>
+        <div class="box has-background-dark has-text-white">
+            [ {"ID": Integer, "movieTitle": String, "rating": Integer, "review": String}, ... ]
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Get a rating</h5>
+        <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/ratings/{id}</span> will return the desired rating.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 1, "movieTitle": "Soul", "rating": 4, "review": "Lorem ipsum dolor at sim..."}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Create a new rating</h5>
+        <p class="mb-2">Using the <span class="tag">POST</span> method to <span class="tag">/api/ratings</span> will receive an object that looks like this in the body of the HTTP Request </p>
+        <div class="box">
+            {"ID": Integer, "movieTitle": String, "rating": Integer, "review": String}
+        </div>
+        <p class="mb-2">and return the freshly created item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 2, "movieTitle": "Avatar", "rating": 5, "review": "Lorem ipsum dolor at sim..."}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Update a rating</h5>
+        <p class="mb-2">Using the <span class="tag">PUT</span> method to <span class="tag">/api/ratings/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Integer, "movieTitle": String, "rating": Integer, "review": String}
+        </div>
+        <p class="mb-2">and return the freshly updated item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 3, "movieTitle": "Up", "rating": 3, "review": "Lorem ipsum dolor at sim..."}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Delete a rating</h5>
+        <p class="mb-2">Using the <span class="tag">DELETE</span> method to <span class="tag">/api/ratings/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Integer, "movieTitle": String, "rating": Integer, "review": String}
+        </div>
+        <p class="mb-2">and return the freshly deleted item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 4, "movieTitle": "Wonder Woman", "rating": 2, "review": "Lorem ipsum dolor at sim..."}
+        </div>
+        <div class="mb-4"></div>
+
+    </div>
+</div>
 
 </body>
 </html>

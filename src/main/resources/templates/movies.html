@@ -35,7 +35,7 @@
         </div>
         <div class="navbar-end">
             <div class="navbar-item">
-                <a href="#" class="button is-info is-light">
+                <a href="https://github.com/OutatimeSoftware/PopcornsAPI" class="button is-info is-light">
                     Documentation
                 </a>
             </div>
@@ -52,24 +52,49 @@
         <h5>Get all the movies</h5>
         <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/movies</span> will return the complete movies list.</p>
         <div class="box has-background-dark has-text-white">
-            Testing
+            [ {"ID": Integer, "title": String, "addedBy": User, "createdAt": Date, "updatedAt": Date}, ... ]
         </div>
         <div class="mb-4"></div>
 
         <h5>Get a movie</h5>
-        <p>Using the <span class="tag">GET</span> method</p>
+        <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/movies/{id}</span> will return the desired movie.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 1, "title": "Soul", "addedBy": {"username": "imreyesjorge", ...}, "createdAt": {"day": 12, ...}, "updatedAt": {"day": 13, ...}}
+        </div>
         <div class="mb-4"></div>
 
         <h5>Create a new movie</h5>
-        <p>Using the <span class="tag">POST</span> method</p>
+        <p class="mb-2">Using the <span class="tag">POST</span> method to <span class="tag">/api/movies</span> will receive an object that looks like this in the body of the HTTP Request </p>
+        <div class="box">
+            {"ID": Integer, "title": String, "addedBy": User "createdAt": Date, "updatedAt": Date}
+        </div>
+        <p class="mb-2">and return the freshly created item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 2, "title": "LoTR", "addedBy": {"username": "miguelRAvila", ...}, "createdAt": {"day": 11, ...}, "updatedAt": {"day": 12, ...}}
+        </div>
         <div class="mb-4"></div>
 
         <h5>Update a movie</h5>
-        <p>Using the <span class="tag">PUT</span> method</p>
+        <p class="mb-2">Using the <span class="tag">PUT</span> method to <span class="tag">/api/movies/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Integer, "title": String, "addedBy": User, "createdAt": Date, "updatedAt": Date}
+        </div>
+        <p class="mb-2">and return the freshly updated item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 3, "title": "Harry Potter", "addedBy": {"username": "robcllanes", ...}, "createdAt": {"day": 22, ...}, "updatedAt": {"day": 11, ...}}
+        </div>
         <div class="mb-4"></div>
 
         <h5>Delete a movie</h5>
-        <p>Using the <span class="tag">DELETE</span> method</p>
+        <p class="mb-2">Using the <span class="tag">DELETE</span> method to <span class="tag">/api/movies/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Integer, "title": String, "addedBy": User, "createdAt": Date, "updatedAt": Date}
+        </div>
+        <p class="mb-2">and return the freshly deleted item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 4, "title": "Avatar", "addedBy": {"username": "marioC", ...}, "createdAt": {"day": 30, ...}, "updatedAt": {"day": 31, ...}}
+        </div>
+        <div class="mb-4"></div>
 
     </div>
 </div>

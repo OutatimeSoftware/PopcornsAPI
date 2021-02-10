@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar mb-4">
     <div class="navbar-brand">
         <a href="/" class="navbar-item has-text-weight-semibold has-text-grey-darker">
             <img src="../favicon.png" alt="logo" class="mr-2">
@@ -35,13 +35,70 @@
         </div>
         <div class="navbar-end">
             <div class="navbar-item">
-                <a href="#" class="button is-info is-light">
+                <a href="https://github.com/OutatimeSoftware/PopcornsAPI" class="button is-info is-light">
                     Documentation
                 </a>
             </div>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="content">
+        <h3>How to use the users endpoint:</h3>
+        This is a brief explanation of how to use the users endpoint <span class="tag">/api/users</span>.
+        <div class="mb-6"></div>
+
+        <h5>Get all the ratings</h5>
+        <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/users</span> will return the complete users list.</p>
+        <div class="box has-background-dark has-text-white">
+            [ {"ID": Long, "username": String, "name": String, "lastname": String, "profilePicture": String, "email": String}, ... ]
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Get a user</h5>
+        <p class="mb-2">Using the <span class="tag">GET</span> method to <span class="tag">/api/users/{id}</span> will return the desired user.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 1, "username": "kings", "name": "Jorge", "lastname": "Reyes", "profilePicture": "https://lh3.googleusercontent.com/-oCS2G33ogSU/AAAAAAAAAAI/AAAAAAAAAAA/fntcdzg69Fk/s181-c/116225983760077661019.jpg", "email": "test@reyes.cool"}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Create a new user</h5>
+        <p class="mb-2">Using the <span class="tag">POST</span> method to <span class="tag">/api/users</span> will receive an object that looks like this in the body of the HTTP Request </p>
+        <div class="box">
+            {"ID": Long, "username": String, "name": String, "lastname": String, "profilePicture": String, "email": String}
+        </div>
+        <p class="mb-2">and return the freshly created item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 2, "username": "mariochan", "name": "Mario", "lastname": "Chan", "profilePicture": "https://lh3.googleusercontent.com/-oCS2G33ogSU/AAAAAAAAAAI/AAAAAAAAAAA/fntcdzg69Fk/s181-c/116225983760077661019.jpg", "email": "mario@chan.zurita"}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Update a user</h5>
+        <p class="mb-2">Using the <span class="tag">PUT</span> method to <span class="tag">/api/users/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Long, "username": String, "name": String, "lastname": String, "profilePicture": String, "email": String}
+        </div>
+        <p class="mb-2">and return the freshly updated item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 3, "username": "miguelravila", "name": "Miguel", "lastname": "Avila", "profilePicture": "https://lh3.googleusercontent.com/-oCS2G33ogSU/AAAAAAAAAAI/AAAAAAAAAAA/fntcdzg69Fk/s181-c/116225983760077661019.jpg", "email": "miguelr@avila.cool"}
+        </div>
+        <div class="mb-4"></div>
+
+        <h5>Delete a user</h5>
+        <p class="mb-2">Using the <span class="tag">DELETE</span> method to <span class="tag">/api/users/{id}</span> will receive an object that looks like this in the body of the HTTP Request</p>
+        <div class="box">
+            {"ID": Long, "username": String, "name": String, "lastname": String, "profilePicture": String, "email": String}
+        </div>
+        <p class="mb-2">and return the freshly deleted item.</p>
+        <div class="box has-background-dark has-text-white">
+            {"ID": 4, "username": "robercllanes", "name": "Roberto", "lastname": "Llanes", "profilePicture": "https://lh3.googleusercontent.com/-oCS2G33ogSU/AAAAAAAAAAI/AAAAAAAAAAA/fntcdzg69Fk/s181-c/116225983760077661019.jpg", "email": "robert@cllanes.com"}
+        </div>
+        <div class="mb-4"></div>
+
+    </div>
+</div>
+
 
 </body>
 </html>
