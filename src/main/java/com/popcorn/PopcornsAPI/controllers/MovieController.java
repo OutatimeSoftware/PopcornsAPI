@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class MovieController {
@@ -14,9 +15,9 @@ public class MovieController {
     MovieService movieService = new MovieService();
 
     @GetMapping("/api/movies")
-    public ArrayList<Movie> getAll() {
+    public List<Movie> getAll() {
         // Create Movie list
-        ArrayList<Movie> list = new ArrayList<Movie>();
+        List<Movie> list = new ArrayList<Movie>();
 
         // Fetch data from DB
         list.add(new Movie(
@@ -40,6 +41,7 @@ public class MovieController {
                         20
                 )
         ));
+        list = movieService.listItems();
 
         // Return list
         return list;
@@ -59,6 +61,7 @@ public class MovieController {
         );
 
         // Save the Object to the DB
+        movieService.saveItem(thisMovie);
 
         // Return the created Object
         return thisMovie;
@@ -88,6 +91,7 @@ public class MovieController {
                         1,
                         20)
         );
+        thisMovie = movieService.getItem(thisID);
 
         // Return movie
         return thisMovie;
@@ -127,6 +131,8 @@ public class MovieController {
         thisMovie.setCreatedAt(newMovie.getCreatedAt());
         thisMovie.setUpdatedAt(newMovie.getUpdatedAt());
 
+        movieService.updateItem(thisMovie, thisID);
+
         // Return updated Object
         return thisMovie;
 
@@ -160,6 +166,7 @@ public class MovieController {
         );
 
         // Delete movie with thisID
+        movieService.deleteItem(thisID);
 
         // Return deleted movie
         return thisMovie;

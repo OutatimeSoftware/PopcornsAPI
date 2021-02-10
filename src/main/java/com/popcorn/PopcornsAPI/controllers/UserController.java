@@ -1,17 +1,22 @@
 package com.popcorn.PopcornsAPI.controllers;
 
+import com.popcorn.PopcornsAPI.Service.MovieService;
+import com.popcorn.PopcornsAPI.Service.UserService;
 import com.popcorn.PopcornsAPI.entities.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class UserController {
 
+    UserService userService = new UserService();
+
     @GetMapping("/api/users")
-    public ArrayList<User> getAll() {
+    public List<User> getAll() {
         // Create the users list
-        ArrayList<User> list = new ArrayList<User>();
+        List<User> list = null;
 
         // Fetch data from the DB
         list.add(new User(
@@ -21,6 +26,7 @@ public class UserController {
                 "https://avatars.githubusercontent.com/u/56327994?s=460&v=4",
                 "mario@chan.im"
         ));
+        list = userService.listItems();
 
         // Return the list
         return list;
@@ -40,6 +46,7 @@ public class UserController {
         );
 
         // Save Object to the DB
+        userService.saveItem(thisUser);
 
         // Return the created Object
         return thisUser;
@@ -57,6 +64,7 @@ public class UserController {
                 "https://ui-avatars.com/api/?name=John+Doe",
                 "zezima@gmail.com"
         );
+        thisUser = userService.getItem(thisID);
 
         // Return fetched Object
         return thisUser;
@@ -83,6 +91,8 @@ public class UserController {
         thisUser.setProfilePicture(newUser.getProfilePicture());
         thisUser.setEmail(newUser.getEmail());
 
+        userService.updateItem(thisUser, thisID);
+
         // Return updated user
         return thisUser;
     }
@@ -101,6 +111,7 @@ public class UserController {
         );
 
         // Delete the Object with thisID
+        userService.deleteItem(thisID);
 
         // Return deleted Object
         return thisUser;
