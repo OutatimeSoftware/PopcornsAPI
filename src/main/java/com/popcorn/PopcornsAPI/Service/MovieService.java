@@ -32,4 +32,8 @@ public class MovieService implements CRUD<Movie> {
         return movieRepository.findAll();
     }
 
+    public Movie getItem(Integer id){
+        return movieRepository.findById(id).orElse(null);
+    }
+
 }

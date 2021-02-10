@@ -8,5 +8,6 @@ public interface CRUD<T> {
     public void updateItem(T item, Integer id);
     public void deleteItem(Integer id);
     public List<T> listItems();
+    public T getItem(Integer id);
 
 }

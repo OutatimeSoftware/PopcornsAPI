@@ -35,4 +35,8 @@ public class UserService implements CRUD<User> {
         return userRepository.findAll();
     }
 
+    public User getItem(Integer id){
+        return userRepository.findById(id).orElse(null);
+    }
+
 }
