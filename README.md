@@ -19,7 +19,7 @@ You can find the API documentantion here:
 - [Ratings](https://popcornsapi.herokuapp.com/ratings)
 - [Users](https://popcornsapi.herokuapp.com/users)
 
-### Team
+### Development Team
 
 | Member  | Topic            |
 |---------|------------------|
