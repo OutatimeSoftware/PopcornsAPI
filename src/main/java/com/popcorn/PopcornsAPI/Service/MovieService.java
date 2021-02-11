@@ -4,9 +4,11 @@ import com.popcorn.PopcornsAPI.Repository.CRUD;
 import com.popcorn.PopcornsAPI.Repository.MovieRepository;
 import com.popcorn.PopcornsAPI.entities.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MovieService implements CRUD<Movie> {
 
     @Autowired

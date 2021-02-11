@@ -12,7 +12,6 @@ import java.util.Set;
         }
 )
 public class User {
-
     @Id
     @SequenceGenerator(
             name = "user_sequence",
@@ -67,6 +66,14 @@ public class User {
         this.lastname = lastname;
         this.profilePicture = profilePicture;
         this.email = email;
+    }
+
+    public User(){
+        this.username = "username";
+        this.name = "name";
+        this.lastname = "lastname";
+        this.profilePicture = "profilePicture";
+        this.email = "email";
     }
 
     public String getUsername() {

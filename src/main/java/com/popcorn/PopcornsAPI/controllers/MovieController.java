@@ -3,6 +3,7 @@ package com.popcorn.PopcornsAPI.controllers;
 import com.popcorn.PopcornsAPI.Service.MovieService;
 import com.popcorn.PopcornsAPI.entities.Movie;
 import com.popcorn.PopcornsAPI.entities.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,7 +13,8 @@ import java.util.List;
 @RestController
 public class MovieController {
 
-    MovieService movieService = new MovieService();
+    @Autowired
+    MovieService movieService;
 
     @GetMapping("/api/movies")
     public List<Movie> getAll() {

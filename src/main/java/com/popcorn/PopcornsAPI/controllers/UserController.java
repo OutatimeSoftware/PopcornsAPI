@@ -3,6 +3,7 @@ package com.popcorn.PopcornsAPI.controllers;
 import com.popcorn.PopcornsAPI.Service.MovieService;
 import com.popcorn.PopcornsAPI.Service.UserService;
 import com.popcorn.PopcornsAPI.entities.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    UserService userService = new UserService();
+    @Autowired
+    UserService userService;
 
     @GetMapping("/api/users")
     public List<User> getAll() {
@@ -47,7 +49,7 @@ public class UserController {
 
     @GetMapping("/api/users/{id}")
     public User getUser(
-            @PathVariable(value="id") int thisID
+            @PathVariable(value="id") Long thisID
     ) {
         // Fetch user with thisID
         User thisUser = new User(
@@ -65,7 +67,7 @@ public class UserController {
 
     @PutMapping("/api/users/{id}")
     public User updateUser(
-            @PathVariable(value="id") int thisID,
+            @PathVariable(value="id") Long thisID,
             @RequestBody User newUser
     ) {
         // Fetch user with thisID
@@ -92,7 +94,7 @@ public class UserController {
 
     @DeleteMapping("/api/users/{id}")
     public User deleteUser(
-            @PathVariable(value="id") int thisID
+            @PathVariable(value="id") Long thisID
     ) {
         // Fetch the Object with thisID
         User thisUser = new User(
