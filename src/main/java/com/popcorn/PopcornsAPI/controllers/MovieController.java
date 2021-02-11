@@ -11,12 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/movies")
 public class MovieController {
 
     @Autowired
     MovieService movieService;
 
-    @GetMapping("/api/movies")
+    @GetMapping()
     public List<Movie> getAll() {
         // Create Movie list
         List<Movie> list = new ArrayList<Movie>();
