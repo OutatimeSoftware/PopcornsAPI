@@ -12,7 +12,7 @@
 	<artifactId>PopcornsAPI</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<name>PopcornsAPI</name>
-	<description>Basic CRUD REST API for a Movies Fan</description>
+	<description>Basic CRUD REST API for Movies Fans</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
