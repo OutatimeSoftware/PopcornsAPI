@@ -1,6 +1,6 @@
 <div align="center">
     <h1>PopcornsAPI</h1>
-    <b>🍿 Basic CRUD REST API for Movies Fan</b>
+    <b>🍿 Basic CRUD REST API for Movies Fans</b>
 </div>
 
 <br>
