@@ -28,3 +28,15 @@ jobs:
         uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"G01CZ5TE278\",\"text\":\"Build Success in main branch!\"}'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Heroku
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.10.9 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
+          heroku_email: "YOUR EMAIL"
+        
