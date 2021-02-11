@@ -1,1 +1,1 @@
-web: java -jar --port $PORT target/PopcornsAPI-1.0.2-SNAPSHOT.jar
+web: java -jar target/PopcornsAPI-1.0.2-SNAPSHOT.jar
