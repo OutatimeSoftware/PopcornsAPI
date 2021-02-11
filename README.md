@@ -6,6 +6,7 @@
 <br>
 
 > Here you can find our application: [PopcornsAPI](https://popcornsapi.herokuapp.com/)
+> Video del proyecto: [Video](https://www.youtube.com/watch?v=xX1CSvJ2He8&feature=youtu.be)
 
 ## Requirements
 
