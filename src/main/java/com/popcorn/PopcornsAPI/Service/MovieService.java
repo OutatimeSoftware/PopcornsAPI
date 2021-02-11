@@ -1,6 +1,5 @@
 package com.popcorn.PopcornsAPI.Service;
 
-import com.popcorn.PopcornsAPI.Repository.CRUD;
 import com.popcorn.PopcornsAPI.Repository.MovieRepository;
 import com.popcorn.PopcornsAPI.entities.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MovieService implements CRUD<Movie> {
+public class MovieService {
 
     @Autowired
     private MovieRepository movieRepository;
@@ -24,6 +23,7 @@ public class MovieService implements CRUD<Movie> {
         existingMovie.setCreatedAt(movie.getCreatedAt());
         existingMovie.setTitle(movie.getTitle());
         existingMovie.setUpdatedAt(movie.getUpdatedAt());
+        movieRepository.save(existingMovie);
     }
 
     public void deleteItem(Integer id){

@@ -1,9 +1,6 @@
 package com.popcorn.PopcornsAPI.Service;
 
-import com.popcorn.PopcornsAPI.Repository.CRUD;
-import com.popcorn.PopcornsAPI.Repository.MovieRepository;
 import com.popcorn.PopcornsAPI.Repository.UserRepository;
-import com.popcorn.PopcornsAPI.entities.Movie;
 import com.popcorn.PopcornsAPI.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
