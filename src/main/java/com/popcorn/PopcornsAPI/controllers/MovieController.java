@@ -20,31 +20,11 @@ public class MovieController {
         List<Movie> list = new ArrayList<Movie>();
 
         // Fetch data from DB
-        list.add(new Movie(
-                1,
-                "Soul",
-                new User(
-                        "imreyesjorge",
-                        "Jorge",
-                        "Reyes",
-                        "https://avatars.githubusercontent.com/u/40706868?s=460&u=4b8f72baeca2602e7d948ec807e1321802bb1cef&v=4",
-                        "jorge@reyes.im"
-                ),
-                new Date(
-                        2020,
-                        5,
-                        10
-                ),
-                new Date(
-                        2020,
-                        5,
-                        20
-                )
-        ));
         list = movieService.listItems();
 
         // Return list
         return list;
+
     }
 
     @PostMapping("/api/movies")

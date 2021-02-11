@@ -19,13 +19,6 @@ public class UserController {
         List<User> list = null;
 
         // Fetch data from the DB
-        list.add(new User(
-                "MarioCZ",
-                "Mario",
-                "Chan",
-                "https://avatars.githubusercontent.com/u/56327994?s=460&v=4",
-                "mario@chan.im"
-        ));
         list = userService.listItems();
 
         // Return the list
