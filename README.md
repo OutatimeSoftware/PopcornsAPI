@@ -10,7 +10,7 @@
 
 ## Requirements
 
-You can find the requirements here: [Requirements](/docs/Requirements)
+You can find the requirements here: [Requirements](/docs/Requirements.md)
 
 ### API Documentation
 
